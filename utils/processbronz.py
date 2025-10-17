@@ -32,11 +32,11 @@ def clean_column(df):
         logger.info("Columns cleaned..")
     return df
 
-def writeSilver(df, table):
+def writeBronz(df, table):
     try:
-        logger.info(f"Writing to silver_{table}..")
-        df.write.format("delta").mode("overwrite").saveAsTable(f"workspace.mystore.silver_{table}")
-        logger.info(f"Written to silver_{table}..")
+        logger.info(f"Writing to bronz_{table}..")
+        df.write.format("delta").mode("overwrite").saveAsTable(f"workspace.mystore.bronz_{table}")
+        logger.info(f"Written to bronz_{table}..")
         return True
     except Exception as e:
         logger.error(f"Error writing to silver: {e}")
